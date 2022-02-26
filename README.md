@@ -3,6 +3,7 @@
 This project was built with:
 
 - React
+- Node.js
 - Axios
 - Sass
 - Express
