@@ -19,8 +19,8 @@ I also learned how to create a mini backend to securely store my API key.
 `npm run start:frontend`
 
 Runs the app in development mode.  
-Open (http://localhost:3000/) to view it in the browser.  
+Open <http://localhost:3000/> to view it in the browser.  
 
 `npm run start:backend`
 
-This starts the server at (http://localhost:8000/)
+This starts the server at <http://localhost:8000/>
