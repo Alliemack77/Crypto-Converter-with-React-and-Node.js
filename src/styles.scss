@@ -1,0 +1,130 @@
+/**** Custom Properties ****/
+
+/* Colors */
+$clr-blue: #0a146e;
+$clr-white: #fff;
+
+/* Typography */
+$ff-body: 'Roboto Condensed', sans-serif;
+$ff-heading: 'Titillium Web', sans-serif;
+
+/* Utilities */
+.ff-heading { font-family: $ff-heading;}
+.ff-body { font-family: $ff-body;}
+
+.text-blue { color: $clr-blue;}
+.text-white { color: $clr-white;}
+
+/* Misc */
+$padding: 2rem 1rem;
+
+
+
+/**** Reset ****/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+
+/* Set core body defaults */
+body {
+//   min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  display: grid;
+  place-items: center;
+}
+
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/**** General Styles ****/
+
+.dashboard {
+  display: flex;
+  justify-content: space-between;
+  height: 50vh;
+  padding: $padding;
+
+  .newsfeed {
+    flex-basis: 40%;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+  }
+
+  .converter {
+    flex-basis: 50%;
+    background-color: $clr-white;
+      
+
+    .table {
+      padding: 1rem ;
+
+      > h1 {
+        margin-block-end: 2rem;
+      }
+    }
+
+    .exchange-rate {
+      background-color: $clr-blue;
+      padding: $padding;
+    }
+  }
+
+
+  .newsfeed {
+    border-left: solid $clr-blue 2px;
+    padding: 1rem 2rem;
+    
+    .article {
+      border-bottom: solid 1px $clr-blue;
+      padding-block: 2rem;
+
+      > a {
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      > a:hover {
+        text-decoration: underline $clr-blue 2px;
+      }
+    }
+    
+  }
+}
