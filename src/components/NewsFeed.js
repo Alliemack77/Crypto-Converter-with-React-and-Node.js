@@ -9,15 +9,10 @@ const NewsFeed = () => {
 
         const options = {
             method: 'GET',
-            url: 'https://crypto-news-live3.p.rapidapi.com/news',
-            headers: {
-              'x-rapidapi-host': 'crypto-news-live3.p.rapidapi.com',
-              'x-rapidapi-key': process.env.REACT_APP_RAPID_API_KEY
-            }
+            url: 'http://localhost:8000/news',
         };
           
         axios.request(options).then(function (response) {
-            console.log(response.data);
             setList(response.data.slice(0, 16))
         }).catch(function (error) {
             console.error(error);
@@ -33,7 +28,7 @@ const NewsFeed = () => {
             {
                 list?.map(item => { 
                     return (
-                        <div className="article" key={item.url}>
+                        <div className="article" >
                             <a className="link" href={item.url}>
                                 <p className="text-blue ff-body">{item.title}</p>
                             </a>

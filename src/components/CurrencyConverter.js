@@ -13,19 +13,20 @@ const CurrencyConverter = () => {
     const [result, setResult] = useState(0)
 
     const convert = () => {
+
         const options = {
             method: 'GET',
-            url: 'https://alpha-vantage.p.rapidapi.com/query',
+            url: 'http://localhost:8000/convert',
             params: {from_currency: chosenPrimaryCurrency, function: 'CURRENCY_EXCHANGE_RATE', to_currency: chosenSecondaryCurrency},
-            headers: {
-                'x-rapidapi-host': 'alpha-vantage.p.rapidapi.com',
-                'x-rapidapi-key': process.env.REACT_APP_RAPID_API_KEY
-            }
         };
 
         axios.request(options).then(function (response) {
-            setExchangeRate(response.data["Realtime Currency Exchange Rate"]["5. Exchange Rate"]);
+
             setResult(response.data["Realtime Currency Exchange Rate"]["5. Exchange Rate"] * amount)
+            
+            setExchangeRate(response.data["Realtime Currency Exchange Rate"]["5. Exchange Rate"]);
+
+
         }).catch(function (error) {
             console.error(error);
         }); 
